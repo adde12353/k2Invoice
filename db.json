@@ -1,0 +1,113 @@
+{
+  "projects": [
+    {
+      "name": "Projetc1",
+      "id": 637
+    },
+    {
+      "name": "Projetc2",
+      "id": 354
+    }
+  ],
+  "tasks": [
+    {
+      "name": "Task1",
+      "id": 3
+    },
+    {
+      "name": "Task2",
+      "id": 4,
+      "time" : [{
+        "startTime": "2023-05-24T21:08:58.436Z",
+        "stopTime": "2023-05-24T20:47:02.318Z"
+      }
+      ]
+    },
+    {
+      "name": "Task3",
+      "id": 5,
+      "startTime": "2023-05-24T20:46:05.313Z",
+      "stopTime": "2023-05-24T20:46:06.498Z"
+    },
+    {
+      "name": "test2233",
+      "id": 6,
+      "startTime": "2023-05-24T20:46:17.049Z",
+      "stopTime": "2023-05-24T20:46:20.602Z"
+    }
+  ],
+  "invoice": [
+    {
+      "id": 817,
+      "name": "Hejsan",
+      "task": [
+        {
+          "name": "Task1",
+          "id": 485
+        },
+        {
+          "name": "Task2",
+          "id": 226.211890213424
+        }
+      ],
+      "timmpris": 99,
+      "createDate": "2023-05-24T16:07:45.801Z",
+      "dueDate": "2023-06-24T16:07:45.801Z",
+      "betald": false
+    },
+    {
+      "id": 102,
+      "name": "Hejsan2",
+      "task": [
+        {
+          "name": "Task1",
+          "id": 485
+        },
+        {
+          "name": "Task2",
+          "id": 226.211890213424
+        }
+      ],
+      "timmpris": 934,
+      "createDate": "2023-05-24T16:07:57.918Z",
+      "dueDate": "2023-06-24T16:07:57.918Z",
+      "betald": false
+    },
+    {
+      "id": 103,
+      "name": "Hejsan2",
+      "task": [
+        {
+          "name": "Task1",
+          "id": 485
+        },
+        {
+          "name": "Task2",
+          "id": 226.211890213424
+        }
+      ],
+      "timmpris": 934,
+      "createDate": "2023-03-24T16:07:57.918Z",
+      "dueDate": "2023-04-24T16:07:57.918Z",
+      "betald": false
+    },
+    {
+      "id": 104,
+      "name": "Hejsan2",
+      "task": [
+        {
+          "name": "Task1",
+          "id": 485
+        },
+        {
+          "name": "Task2",
+          "id": 226.211890213424
+        }
+      ],
+      "timmpris": 934,
+      "createDate": "2023-05-22T16:07:57.918Z",
+      "dueDate": "2023-06-21T16:07:57.918Z",
+      "betald": false
+    }
+  ]
+}
