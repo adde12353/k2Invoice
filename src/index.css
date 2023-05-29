@@ -55,13 +55,99 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+table {
+  margin: auto;
+}
+
 .invoiceCardSection{
-  display: flex; flex-wrap: wrap;
+  display: flex; flex-wrap: wrap; gap:20px
 }
 
 .invoiceCard{
-  background-color: aquamarine; color: white; min-width: 300px;
+  background-color: rgb(91, 215, 174); color: white; min-width: 300px;
+  border-radius: 5px;
+  text-align: left; 
+  padding: 8px 0px;
+  padding-left: 40px;
+  max-width: 300px;
+  margin: auto;
 }
+
+.inputCard{
+  background-color: rgb(91, 215, 174); color: white; min-width: 300px;
+  border-radius: 5px;
+  padding: 10px 8px;
+  max-width: 300px;
+  margin: auto;
+  margin: 10px auto;
+}
+
+.inputCard select, .inputCard input {
+  font-size: 20px;
+}
+
+.inputCard select {
+  margin: 10px 5px;
+}
+
+.cardAllList {
+  display: flex; max-width: 500px; border: 0.5px solid rgb(34, 34, 34);
+  justify-content: space-between;
+  margin: 5px; padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.navDesktop a{
+  padding: 10px 20px;
+}
+
+.navDesktopMobile{
+  display: none;
+}
+
+.MenyToggle{
+  display: none;
+  
+}
+
+.addBtn{
+  padding: 2px 4px;
+  font-size: 14px;
+  
+}
+
+input{
+  margin: 5px;
+}
+.headerCell{
+  background-color: rgb(77, 77, 77);
+  color: white;
+}
+td{
+  width: 200px;
+}
+
+.timeTracker{
+  background-color: rgb(91, 215, 174); color: white; min-width: 300px;
+  border-radius: 5px;
+  padding: 40px 0px;
+  max-width: 300px;
+  margin: auto;
+  margin: 10px auto;
+  
+}
+
+.timeTracker select{
+font-size: 20px;
+}
+
+.timeTracker button{
+  margin: 5px;
+  }
+
+  .timeTracker p{
+    min-height: 24px;
+  }
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -74,4 +160,36 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  
 }
+@media only screen and (max-width: 600px){
+.navDesktop{
+  display: none;
+}
+.MenyToggle{
+  display: inline;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 35px;
+  transform: rotate(-90deg);
+}
+
+.navDesktopMobile {
+  padding-top: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  background-color: black;
+  height: 100vh;
+  width: 50vw;
+}
+.navDesktopMobile a{
+color: white;
+
+}
+}
+

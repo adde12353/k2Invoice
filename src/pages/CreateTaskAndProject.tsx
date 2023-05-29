@@ -1,84 +1,85 @@
-import { useState, useContext } from "react"
-import {contextApp} from '../App'
+import { useState } from "react";
 
+interface ProjectData {
+  name: string;
+}
 
-function CreateTask() {
- 
-    const [project, setProject] = useState()
-    const [task, setTask] = useState()
+interface TaskData {
+  name: string;
+}
 
+const CreateTask: React.FC = () => {
+  const [project, setProject] = useState<string | undefined>();
+  const [task, setTask] = useState<string | undefined>();
+  const [finishedPost, setFinishedPost] = useState<string | undefined>();
+  const [finishedTask, setFinishedTask] = useState<string | undefined>();
 
-    function projectChange (e:any) {
-      setProject(e.target.value)
-    }
-    function taskChange (e:any) {
-      setTask(e.target.value)
-    }
+  const projectChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setProject(e.target.value);
+  };
 
-    function saveProject() {
+  const taskChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTask(e.target.value);
+  };
 
-      const projectData = {
-        name: project,
-        id: Math.random() * 1000
-      }
+  const saveProject = () => {
+    const projectData: ProjectData = {
+      name: project || "",
+    };
 
-      fetch('http://localhost:3000/projects', {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(projectData)
-      }).then(() => {console.log("klart")})
-      .catch((err) => {console.log(err,"eeros")})
-    }
+    fetch('http://localhost:3000/projects', {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(projectData)
+    }).then(() => { setFinishedPost("Skapat") })
+      .catch((err) => { setFinishedPost(err) });
+  };
 
-    function saveTask() {
+  const saveTask = () => {
+    const taskData: TaskData = {
+      name: task || "",
+    };
 
-      const taskData = {
-        name: task,
-        id: Math.random() * 1000
-      }
+    fetch('http://localhost:3000/tasks', {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(taskData)
+    }).then(() => { setFinishedTask("klart") })
+      .catch((err) => { setFinishedTask(err) });
+  };
 
-      fetch('http://localhost:3000/tasks', {
-        method: "POST",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(taskData)
-      }).then(() => {console.log("klart")})
-      .catch((err) => {console.log(err,"eeros")})
-    }
-
-    return (
-      <>
-      <div>
-      <h2>Skapa projekt</h2>
-        <input 
-        type="text" 
-        placeholder="Projekt namn"
-        value={project}
-        onChange={projectChange}
+  return (
+    <>
+      <div className="inputCard">
+        <h2>Skapa projekt</h2>
+        <input
+          type="text"
+          placeholder="Projekt namn"
+          value={project}
+          onChange={projectChange}
         />
-        <p>{project}</p>
+        <p>{finishedPost}</p>
         <button
-        onClick={saveProject}>
+          onClick={saveProject}>
           Spara projekt
         </button>
       </div>
 
-      <div>
-      <h2>Skapa ett task</h2>
-        <input 
-        type="text" 
-        placeholder="Projekt namn"
-        value={task}
-        onChange={taskChange}
+      <div className="inputCard">
+        <h2>Skapa ett task</h2>
+        <input
+          type="text"
+          placeholder="Projekt namn"
+          value={task}
+          onChange={taskChange}
         />
-        <p>{task}</p>
+        <p>{finishedTask}</p>
         <button
-        onClick={saveTask}
+          onClick={saveTask}
         >Spara</button>
       </div>
-      
+    </>
+  );
+};
 
-      </>
-    )
-  }
-  
-  export default CreateTask
+export default CreateTask;
